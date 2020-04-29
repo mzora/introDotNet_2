@@ -11,7 +11,7 @@ namespace Introduzione
 {
 
 
-    public partial class Default
+    public partial class Import
     {
 
         /// <summary>
@@ -24,39 +24,57 @@ namespace Introduzione
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
-        /// Controllo userID.
+        /// Controllo TXTNome.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox userID;
+        protected global::System.Web.UI.WebControls.TextBox TXTNome;
 
         /// <summary>
-        /// Controllo pswID.
+        /// Controllo TXTCognome.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pswID;
+        protected global::System.Web.UI.WebControls.TextBox TXTCognome;
 
         /// <summary>
-        /// Controllo BTNSubmitLogin.
+        /// Controllo TXTEta.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BTNSubmitLogin;
+        protected global::System.Web.UI.WebControls.TextBox TXTEta;
 
         /// <summary>
-        /// Controllo LBLOutLogin.
+        /// Controllo BTNSubmit.
         /// </summary>
         /// <remarks>
         /// Campo generato automaticamente.
         /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label LBLOutLogin;
+        protected global::System.Web.UI.WebControls.Button BTNSubmit;
+
+        /// <summary>
+        /// Controllo LBLOutput.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LBLOutput;
+
+        /// <summary>
+        /// Controllo GRDPerson.
+        /// </summary>
+        /// <remarks>
+        /// Campo generato automaticamente.
+        /// Per la modifica, spostare la dichiarazione di campo dal file di progettazione al file code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GRDPerson;
     }
 }
