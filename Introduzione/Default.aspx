@@ -10,23 +10,23 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="container col-8">
-            <div class="form-group">
-                <div class="justify-content-center">
-                    <label for="userID">scrivi user</label>
-                    <asp:TextBox ID="userID" runat="server"></asp:TextBox>
+        <div class="container col-12 no-gutters">
+            <div id="formBox" class="col-sm-4 offset-sm-4">
+                <div id="formItem" class="form-group">
+                    <label for="userID">USERNAME:</label>
+                    <asp:TextBox ID="userID" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 
-                <div class="justify-content-center">
-                    <label for="pswID">scrivi psw</label>
-                    <asp:TextBox ID="pswID" runat="server" TextMode="Password"></asp:TextBox>
+                <div id="formItem" class="form-group">
+                    <label for="pswID">PASSWORD:</label>
+                    <asp:TextBox ID="pswID" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                 </div>
 
-                <div class="justify-content-center">
-                    <asp:Button ID="BTNSubmitLogin" runat="server" Text="Submit" OnClick="BTNSubmitLogin_Click" CssClass="btn btn-danger" />
+                <div id="formItemBtn" class="form-group">
+                    <asp:Button ID="BTNSubmitLogin" runat="server" Text="Submit" OnClick="BTNSubmitLogin_Click" CssClass="btn btn-outline-light" />
                 </div>
 
-                <div class="row">
+                <div class="form-group">
                     <asp:Label ID="LBLOutLogin" runat="server"></asp:Label>
                 </div>
             </div>

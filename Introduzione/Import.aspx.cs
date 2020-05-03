@@ -11,7 +11,12 @@ namespace Introduzione
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (Session["currentUser"] == null)
+            {
+                Response.Redirect("Default.aspx", true);
+            }
 
+            LBLLoggedName.Text = "Benvenuto: " +Session["currentUser"].ToString();
         }
 
         static List<Persona> persone = new List<Persona>();

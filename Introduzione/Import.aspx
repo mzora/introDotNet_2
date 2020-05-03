@@ -12,6 +12,9 @@
 <body>
     <form id="form1" runat="server">
         <div class="container col-8">
+            <div class="row align-content-center">
+                <asp:Label ID="LBLLoggedName" runat="server"></asp:Label>
+            </div>
             <div class="form-group">
                 <div class="justify-content-center">
 

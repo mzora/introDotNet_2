@@ -30,17 +30,27 @@ namespace Introduzione
                 v.setPSW(newPsw);
                 validLogin.Add(v);
             }
-            //bool userFound = false;
+            
+            bool userFound = false;
+            bool isLogged = false;
+
             foreach (Validazione v in validLogin)
             {
                 if (v.getUser() == userID.Text && v.getPSW() == pswID.Text)
                 {
-                    Response.Redirect("Import.aspx", true);
+                    isLogged = true;
+                    Session["currentUser"] = v.getUser();
+                    Session["currentPsw"] = v.getPSW();
+                    Session["logged"] = isLogged;
+                    
                     //LBLOutLogin.Text = "login corretto";
+                    Response.Redirect("Import.aspx", true);
                     //userFound = true;
-                    //break;
+                    break;
                 }
+                
                 LBLOutLogin.Text = "login errato";
+                Response.Redirect("forbidden.html", true);
             }
             /*
             if (!userFound)

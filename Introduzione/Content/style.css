@@ -1,0 +1,14 @@
+﻿body {
+    background-color: #1d212436;
+}
+
+#formBox{
+    margin-top:30vh;
+}
+
+#formItem label, #formItemBtn {
+    display: block;
+    text-align: center;
+    line-height: 150%;
+    font-size: .85em;
+}
