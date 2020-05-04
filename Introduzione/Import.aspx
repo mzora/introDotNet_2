@@ -3,43 +3,47 @@
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Import Page</title>
     <link href="Content/bootstrap.min.css" rel="stylesheet" />
     <link href="Content/style.css" rel="stylesheet" />
 </head>
+
 <body>
     <form id="form1" runat="server">
-        <div class="container col-8">
-            <div class="row align-content-center">
+        <div class="container col-12">
+            <div id="lblLogged" class="col-6">
                 <asp:Label ID="LBLLoggedName" runat="server"></asp:Label>
             </div>
-            <div class="form-group">
-                <div class="justify-content-center">
 
+            <div class="col-3 offset-6">
+                <div class="form-group">
                     <label for="InputNome">Nome</label>
                     <asp:TextBox ID="TXTNome" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 
-                <div class="justify-content-center">
+                <div class="form-group">
                     <label for="InputCognome">Cognome</label>
                     <asp:TextBox ID="TXTCognome" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 
-                <div class="justify-content-center">
+                <div class="form-group">
                     <label for="InputEta">Eta</label>
                     <asp:TextBox ID="TXTEta" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 
-                <div class="justify-content-center">
+                <div class="form-group">
                     <asp:Button ID="BTNSubmit" runat="server" Text="Submit" OnClick="BTNSubmit_Click" CssClass="btn btn-primary" />
-                    <asp:Label ID="LBLOutput" runat="server"></asp:Label>
                 </div>
+
+                <asp:Label ID="LBLOutput" runat="server"></asp:Label>
             </div>
-            <div class="col-12">
-                <asp:GridView ID="GRDPerson" runat="server" CssClass="table table-striped table-borderless table-dark"></asp:GridView>
-            </div>
+
+
+            <asp:GridView ID="GRDPerson" runat="server" CssClass="table table-borderless"></asp:GridView>
+
         </div>
     </form>
 

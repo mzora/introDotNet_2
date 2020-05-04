@@ -12,3 +12,8 @@
     line-height: 150%;
     font-size: .85em;
 }
+
+#lblLogged {
+    float:left;
+    margin-top: 30vh;
+}

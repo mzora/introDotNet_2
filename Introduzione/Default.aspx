@@ -11,7 +11,7 @@
 <body>
     <form id="form1" runat="server">
         <div class="container col-12 no-gutters">
-            <div id="formBox" class="col-sm-4 offset-sm-4">
+            <div id="formBox" class="col-sm-2 offset-sm-5">
                 <div id="formItem" class="form-group">
                     <label for="userID">USERNAME:</label>
                     <asp:TextBox ID="userID" runat="server" CssClass="form-control"></asp:TextBox>
