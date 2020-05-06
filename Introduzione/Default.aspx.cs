@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Data;
 
 namespace Introduzione
 {
@@ -31,7 +32,7 @@ namespace Introduzione
                 validLogin.Add(v);
             }
             
-            bool userFound = false;
+            //bool userFound = false;
             bool isLogged = false;
 
             foreach (Validazione v in validLogin)

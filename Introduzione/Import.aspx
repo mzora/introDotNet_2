@@ -39,12 +39,15 @@
                 </div>
 
                 <asp:Label ID="LBLOutput" runat="server"></asp:Label>
+
             </div>
-
-
-            <asp:GridView ID="GRDPerson" runat="server" CssClass="table table-borderless"></asp:GridView>
-
         </div>
+
+        <div class="row">
+            <div class="col-12">
+                <asp:Button ID="BTNSubmitTab" runat="server" Text="Crea/Refresh Tabella" OnClick="BTNSubmitTab_Click" CssClass="btn btn-info" />
+                <asp:GridView ID="GRDPerson" runat="server" CssClass="table"></asp:GridView>
+            </div>
     </form>
 
     <script src="Scripts/jquery-3.0.0.min.js"></script>
