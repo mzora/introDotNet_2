@@ -20,6 +20,16 @@
 
             <div class="col-3 offset-6">
                 <div class="form-group">
+                    <label for="InputUsername">Username</label>
+                    <asp:TextBox ID="TXTUsername" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+
+                <div class="form-group">
+                    <label for="InputPsw">Password</label>
+                    <asp:TextBox ID="TXTPsw" runat="server" CssClass="form-control"></asp:TextBox>
+                </div>
+
+                <div class="form-group">
                     <label for="InputNome">Nome</label>
                     <asp:TextBox ID="TXTNome" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
@@ -41,13 +51,15 @@
                 <asp:Label ID="LBLOutput" runat="server"></asp:Label>
 
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col-12">
-                <asp:Button ID="BTNSubmitTab" runat="server" Text="Crea/Refresh Tabella" OnClick="BTNSubmitTab_Click" CssClass="btn btn-info" />
+
+            <div class="col-8">
+                <div class="row">
+                    <asp:Button ID="BTNSubmitTab" runat="server" Text="Crea/Refresh Tabella" OnClick="BTNSubmitTab_Click" CssClass="btn btn-info" />
+                </div>
                 <asp:GridView ID="GRDPerson" runat="server" CssClass="table"></asp:GridView>
             </div>
+        </div>
     </form>
 
     <script src="Scripts/jquery-3.0.0.min.js"></script>

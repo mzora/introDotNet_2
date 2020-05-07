@@ -13,18 +13,31 @@ namespace Introduzione
         public static void insertUser(Persona p)
         {
             string connectionString = WebConfigurationManager.ConnectionStrings["MainDB"].ConnectionString;
-            string query = "insert into [dbo].[Persone] values (newid(), @nome, @cognome, @eta)";
+            string query = "insert into [dbo].[Persone] values (newid(),@username, @password, @nome, @cognome, @eta, getdate())";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
                     SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@username", p.Username);
+                    command.Parameters.AddWithValue("@Password", p.Password);
 
-                    command.Parameters.AddWithValue("@nome", p.Nome);
-                    command.Parameters.AddWithValue("@cognome", p.Cognome);
-                    command.Parameters.AddWithValue("@eta", p.Eta);
-                    
+                    if (string.IsNullOrEmpty(p.Nome))
+                        command.Parameters.AddWithValue("@Nome", DBNull.Value);
+                    else
+                        command.Parameters.AddWithValue("@Nome", p.Nome);
+
+                    if (string.IsNullOrEmpty(p.Cognome))
+                        command.Parameters.AddWithValue("@Cognome", DBNull.Value);
+                    else
+                        command.Parameters.AddWithValue("@Cognome", p.Cognome);
+
+                    if (string.IsNullOrEmpty(p.Eta))
+                        command.Parameters.AddWithValue("@Eta", DBNull.Value);
+                    else
+                        command.Parameters.AddWithValue("@Eta", p.Eta);
+
                     connection.Open();
                     command.ExecuteReader();
 
@@ -45,7 +58,7 @@ namespace Introduzione
             List<Persona> persone = new List<Persona>();
 
             string connectionString = WebConfigurationManager.ConnectionStrings["MainDB"].ConnectionString;
-            string query = "SELECT [ID],[Nome],[Cognome],[Eta] FROM [dbo].[persone]";  
+            string query = "SELECT [IDuser],[Nome],[Cognome],[Eta] FROM [dbo].[Persone]";  
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -67,7 +80,7 @@ namespace Introduzione
                         p.ID = Guid.Parse(row["IDuser"].ToString());
                         p.Nome = row["Nome"].ToString();
                         p.Cognome = row["Cognome"].ToString();
-                        p.Eta = int.Parse(row["Eta"].ToString());
+                        p.Eta = row["Eta"].ToString();
                         persone.Add(p);
                     }
 
