@@ -58,7 +58,7 @@ namespace Introduzione
             List<Persona> persone = new List<Persona>();
 
             string connectionString = WebConfigurationManager.ConnectionStrings["MainDB"].ConnectionString;
-            string query = "SELECT [IDuser],[Nome],[Cognome],[Eta] FROM [dbo].[Persone]";  
+            string query = "SELECT [ID],[Nome],[Cognome],[Eta] FROM [dbo].[Persone]";  
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -77,7 +77,7 @@ namespace Introduzione
                     foreach (DataRow row in dt.Rows)
                     {
                         Persona p = new Persona();
-                        p.ID = Guid.Parse(row["IDuser"].ToString());
+                        p.ID = Guid.Parse(row["ID"].ToString());
                         p.Nome = row["Nome"].ToString();
                         p.Cognome = row["Cognome"].ToString();
                         p.Eta = row["Eta"].ToString();
