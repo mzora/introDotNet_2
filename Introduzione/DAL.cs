@@ -10,9 +10,10 @@ namespace Introduzione
 {
     public static class DAL
     {
+        static string connectionString = WebConfigurationManager.ConnectionStrings["MainDB"].ConnectionString;
+
         public static void insertUser(Persona p)
         {
-            string connectionString = WebConfigurationManager.ConnectionStrings["MainDB"].ConnectionString;
             string query = "insert into [dbo].[Persone] values (newid(),@username, @password, @nome, @cognome, @eta, getdate())";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
@@ -56,19 +57,14 @@ namespace Introduzione
         public static List<Persona> getPersone()
         {
             List<Persona> persone = new List<Persona>();
-
-            string connectionString = WebConfigurationManager.ConnectionStrings["MainDB"].ConnectionString;
             string query = "SELECT [ID],[Nome],[Cognome],[Eta] FROM [dbo].[Persone]";  
-
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
                 {
                     DataTable dt = new DataTable();
-
                     SqlCommand command = new SqlCommand(query, connection);
                     connection.Open();
-
                     using (SqlDataAdapter da = new SqlDataAdapter(command))
                     {
                         da.Fill(dt);
@@ -95,6 +91,46 @@ namespace Introduzione
                 }
             }
             return persone;
+        }
+
+        public static bool validLogin(string usr, string psw)
+        {
+            string query = @"SELECT Username, Password FROM dbo.LoginUsers WHERE Username=@username AND Password=@password";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@username", usr);
+                    command.Parameters.AddWithValue("@Password", psw);
+                    connection.Open();
+                    DataTable dt = new DataTable();
+
+                    using (SqlDataAdapter da = new SqlDataAdapter(command))
+                    {
+                        da.Fill(dt);
+                    }
+
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        if (row["Username"].ToString() == usr && row["Password"].ToString()== psw)
+                        {
+                            return true;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    return false;
+                }
+                finally
+                {
+                    connection.Close();
+                }
+                return false;
+            }
+
+
         }
     }
 }

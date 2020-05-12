@@ -12,14 +12,15 @@
     <form id="form1" runat="server">
         <div class="container col-12 no-gutters">
             <div id="formBox" class="col-sm-2 offset-sm-5">
+                
                 <div id="formItem" class="form-group">
-                    <label for="userID">USERNAME:</label>
-                    <asp:TextBox ID="userID" runat="server" CssClass="form-control"></asp:TextBox>
+                    <label for="UserLogin">USERNAME:</label>
+                    <asp:TextBox ID="UserLogin" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 
                 <div id="formItem" class="form-group">
-                    <label for="pswID">PASSWORD:</label>
-                    <asp:TextBox ID="pswID" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
+                    <label for="PswLogin">PASSWORD:</label>
+                    <asp:TextBox ID="PswLogin" runat="server" TextMode="Password" CssClass="form-control"></asp:TextBox>
                 </div>
 
                 <div id="formItemBtn" class="form-group">

@@ -20,6 +20,17 @@ namespace Introduzione
         
         protected void BTNSubmitLogin_Click(object sender, EventArgs e)
         {
+            if (DAL.validLogin(UserLogin.Text, PswLogin.Text))
+            {
+                Session["currentUser"] = UserLogin.Text;
+                Session["currentPsw"] = PswLogin.Text;
+                Response.Redirect("Import.aspx", true);
+            }
+            else
+            {
+                Response.Redirect("forbidden.html", true);
+            }
+            /*
             List<Validazione> validLogin = new List<Validazione>();
 
             for (int i = 0; i < 5; i++)
@@ -37,7 +48,7 @@ namespace Introduzione
 
             foreach (Validazione v in validLogin)
             {
-                if (v.getUser() == userID.Text && v.getPSW() == pswID.Text)
+                if (v.getUser() == UserLogin.Text && v.getPSW() == PswLogin.Text)
                 {
                     isLogged = true;
                     Session["currentUser"] = v.getUser();
