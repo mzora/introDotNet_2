@@ -57,7 +57,7 @@
                 <div class="row">
                     <asp:Button ID="BTNSubmitTab" runat="server" Text="Crea/Refresh Tabella" OnClick="BTNSubmitTab_Click" CssClass="btn btn-info" />
                 </div>
-                <asp:GridView ID="GRDPerson" runat="server" CssClass="table"></asp:GridView>
+                <asp:GridView ID="GRDPerson" runat="server" OnRowDataBound="GRDPerson_RowDataBound" CssClass="table"></asp:GridView>
             </div>
         </div>
     </form>

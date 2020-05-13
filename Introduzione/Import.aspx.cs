@@ -19,7 +19,16 @@ namespace Introduzione
                 Response.Redirect("Default.aspx", true);
             }
             LBLLoggedName.Text = "Benvenuto: " + Session["currentUser"].ToString();
-            
+
+            GRDPerson.DataSource = DAL.getPersone();
+            GRDPerson.DataBind();
+        }
+
+        protected void GRDPerson_RowDataBound(object sender, GridViewRowEventArgs e)
+        {
+            e.Row.Cells[0].Visible = false;
+            e.Row.Cells[1].Visible = false;
+            e.Row.Cells[2].Visible = false;
         }
 
         protected void BTNSubmit_Click(object sender, EventArgs e)
@@ -40,5 +49,6 @@ namespace Introduzione
             GRDPerson.DataSource = DAL.getPersone();
             GRDPerson.DataBind();
         }
+
     }
 }

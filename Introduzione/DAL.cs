@@ -57,7 +57,7 @@ namespace Introduzione
         public static List<Persona> getPersone()
         {
             List<Persona> persone = new List<Persona>();
-            string query = "SELECT [ID],[Nome],[Cognome],[Eta] FROM [dbo].[Persone]";  
+            string query = "SELECT [ID],[Nome],[Cognome],[Eta],[CreationDate] FROM [dbo].[Persone] ORDER BY [CreationDate]";  
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 try
@@ -77,9 +77,9 @@ namespace Introduzione
                         p.Nome = row["Nome"].ToString();
                         p.Cognome = row["Cognome"].ToString();
                         p.Eta = row["Eta"].ToString();
+                        p.CreationDate = (DateTime)row["CreationDate"];
                         persone.Add(p);
                     }
-
                 }
                 catch (Exception ex)
                 {
@@ -121,7 +121,7 @@ namespace Introduzione
                 }
                 catch (Exception ex)
                 {
-                    return false;
+
                 }
                 finally
                 {
@@ -129,8 +129,6 @@ namespace Introduzione
                 }
                 return false;
             }
-
-
         }
     }
 }
