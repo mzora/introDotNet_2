@@ -13,12 +13,12 @@
 
 <body>
     <form id="form1" runat="server">
-        <div class="container col-12">
+        <div id="container" class="container col-10 pt-4">
             <div id="lblLogged" class="col-6">
                 <asp:Label ID="LBLLoggedName" runat="server"></asp:Label>
             </div>
 
-            <div class="col-3 offset-6">
+            <div id="insertBox" class="col-6 offset-6 py-1 mb-2">
                 <div class="form-group">
                     <label for="InputUsername">Username</label>
                     <asp:TextBox ID="TXTUsername" runat="server" CssClass="form-control"></asp:TextBox>
@@ -44,20 +44,20 @@
                     <asp:TextBox ID="TXTEta" runat="server" CssClass="form-control"></asp:TextBox>
                 </div>
 
-                <div class="form-group">
-                    <asp:Button ID="BTNSubmit" runat="server" Text="Submit" OnClick="BTNSubmit_Click" CssClass="btn btn-primary" />
+                <div class="form-group text-center">
+                    <asp:Button ID="BTNSubmit" runat="server" Text="Submit" OnClick="BTNSubmit_Click" CssClass="btn btn-info"/>
                 </div>
 
                 <asp:Label ID="LBLOutput" runat="server"></asp:Label>
-
             </div>
 
+            <div class="form-group text-center">
+                <asp:Button ID="BTNSubmitTab" runat="server" Text="Refresh Table" OnClick="BTNSubmitTab_Click" CssClass="btn btn-info" />
+            </div>
+                
 
-            <div class="col-8">
-                <div class="row">
-                    <asp:Button ID="BTNSubmitTab" runat="server" Text="Crea/Refresh Tabella" OnClick="BTNSubmitTab_Click" CssClass="btn btn-info" />
-                </div>
-                <asp:GridView ID="GRDPerson" runat="server" OnRowDataBound="GRDPerson_RowDataBound" CssClass="table"></asp:GridView>
+            <div class="form-group col-12">
+                <asp:GridView ID="GRDPerson" runat="server" OnRowDataBound="GRDPerson_RowDataBound" CssClass="table table-bordered"></asp:GridView>
             </div>
         </div>
     </form>

@@ -1,9 +1,16 @@
-﻿body {
-    background-color: #1d212436;
+﻿
+body {
+    background-color: lightgrey;
 }
 
 #formBox{
     margin-top:30vh;
+}
+#container {
+    background-color: antiquewhite;
+}
+#insertBox{
+    background-color: #d3f6db;
 }
 
 #formItem label, #formItemBtn {
